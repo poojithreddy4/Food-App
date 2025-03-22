@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import styles from "./fooddetails.module.css";
-import ItemList from "./itemList";
+import ItemList from "./ItemList";
 export default function FoodDetails({ foodId }) {
   const [food, setFood] = useState({});
   const URL = `https://api.spoonacular.com/recipes/${foodId}/information`;
@@ -16,7 +16,6 @@ export default function FoodDetails({ foodId }) {
     }
     fetchFood();
   }, [foodId]);
-
   return (
     <div>
       <div className={styles.recipeCard}>
