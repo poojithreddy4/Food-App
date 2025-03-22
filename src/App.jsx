@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import "./Body.css";
 import Container from "./Components/Container";
 import FoodDetails from "./Components/FoodDetail";
 import FoodList from "./Components/FoodList";
@@ -12,15 +13,17 @@ export default function App() {
   return (
     <div className="App">
       <Nav />
-      <Search foodData={foodData} setFoodData={setFoodData} />
-      <Container>
-        <InnerContainer>
-          <FoodList setFoodId={setFoodId} foodData={foodData} />
-        </InnerContainer>
-        <InnerContainer>
-          <FoodDetails foodId={foodId} />
-        </InnerContainer>
-      </Container>
+      <div className="Body">
+        <Search foodData={foodData} setFoodData={setFoodData} />
+        <Container>
+          <InnerContainer>
+            <FoodList setFoodId={setFoodId} foodData={foodData} />
+          </InnerContainer>
+          <InnerContainer>
+            <FoodDetails foodId={foodId} />
+          </InnerContainer>
+        </Container>
+      </div>
     </div>
   );
 }
